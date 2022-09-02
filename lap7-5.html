@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            table, th, td ,tr{
+              border:1px solid black;
+            }
+            </style>
+    <script>
+    function addSong() {
+        var nameInput = document.getElementById("name");
+        var addressInput = document.getElementById("address");
+        var phonenumberInput = document.getElementById("phone");
+        var namedata = nameInput.value;
+        var addressdata = addressInput.value;
+        var phonedata = phonenumberInput.value;
+
+        var table =document.getElementById("playlist")
+        var tr = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");
+
+        td1.innerHTML = namedata;
+        tr.appendChild(td1);
+        td2.innerHTML = addressdata;
+        tr.appendChild(td2);
+        td3.innerHTML = phonedata;
+        tr.appendChild(td3);
+        table.appendChild(tr);
+        }
+    </script>
+</head>
+<body>
+        <form action="addSong">
+            <label>ชื่อลูกค้า</label>
+            <input type="text" id="name">
+            <br>
+            <label>ที่อยู่</label>
+            <input type="text" id="address">
+            <br>
+            <label>โทรศัพท์</label>
+            <input type="text" id="phone">
+            <br>
+            <input type="button" value="เพิ่ม" onclick="addSong()">
+        </form>
+    <table id="playlist">
+                <td>ชื่อลูกค้า</td>
+                <td>ที่่อยู่</td>
+                <td>โทรศัพท์</td>
+            </table>
+</body>
+</html>
